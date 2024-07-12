@@ -16,9 +16,7 @@
 
 
     /** variables globales*/ 
-    let vies, score, level, carteAuTresor, setIntervalID, gpsGridsAvatar, droitDeJouer, carte;     
-    
-   
+    let vies, score, level, carteAuTresor, setIntervalID, gpsGridsAvatar, droitDeJouer, carte;      
 
     /**Jeu*/ 
 
@@ -76,11 +74,11 @@
     };
             /**Initialisation des hamsters et de leurs emplacements  
              * @function initialiserHamster
-             * @param {number} combienDeHamsters - nombre de hamsters définis dans les propriétés du niveau
+             * @param {number} combienDeHamsters - nombre de hamsters défini dans les propriétés du niveau
              * @param {Array<Array<number>>} cachetteHamsters - tableau des coordonnées de la partie, des hamsters
              * @param {Array<Array<number>>} planqueHamsterY - coordonnée verticale d'un hamster j
              * @param {Array<Array<number>>} planqueHamsterX - coordonnée horizontale d'un hamster j
-             * @param {Array<Array<number>>} carte - tableau de la partie en cour
+             * @param {Array<Array<number>>} carte - tableau de la partie en cours
              * @param {number} level   - niveau de la partie
             */
     function initialiserHamster() {
@@ -132,7 +130,7 @@
         /** Initialisation de tout le jeu
          * @function reinitialiser
          * @param {Array} gpsGridsAvatar - coordonnées Grids de l'avatar
-         * @param {Array<Array<number>>} carte - tableau de la partie en cour
+         * @param {Array<Array<number>>} carte - tableau de la partie en cours
          * @param {number} vies    - nombre de vies restantes
          * @param {number} score   - score du ramassage de morceaux de CV
          * @param {number} level   - niveau de la partie 
@@ -164,7 +162,8 @@
     };
 
     /** Initialisation décor du labyrinthe
-        *création de div et assisgantion d'une classe d'arbustes pour illustrer les cloisons du labyrinthe
+        *création de div et assignation d'une classe d'arbustes pour illustrer les cloisons du labyrinthe
+         * @function decorer
          * @param {number} ligne : index de la ligne du tableau où doit se trouver un arbre
          * @param {number} colonne : index de la colonne du tableau où doit se trouver un arbre
          * @param {number} choixArbre : nombre entre 1 et 14 généré aléatoirement pour choisir un arbre
@@ -179,7 +178,8 @@
         document.querySelector("#jeu").append(div);  
     };
 
-        /** récupération des coordonnées des cloisons du labyrinthe
+        /** Récupération des coordonnées des cloisons du labyrinthe
+         * @function planter
          * @param {object} cloisons : tableau contenant la disposition des murs
          * @param {number} niv : niveau de difficulté du jeu
          * @param {number} indexLigne : index de la ligne du tableau

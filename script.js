@@ -59,10 +59,10 @@ $(document).ready(function () {
         droitDeJouer = false;
     };
 
-            /** en cas de récupération "trésor"
+            /** En cas de récupération "trésor"
              * @function bingo
              * @param {number} score   - score du ramassage de morceaux de CV
-             * @param {Array<Array<number>>} carte - tableau de la partie en cour
+             * @param {Array<Array<number>>} carte - tableau de la partie en cours
              * @param {Array} carteAuTresor - coordonnées du "trésor" dans le tableau de la partie      
             */
     function bingo() {
@@ -78,7 +78,7 @@ $(document).ready(function () {
         }
     };
 
-            /** en cas de mauvaise rencontre
+            /** En cas de mauvaise rencontre
              * @function boum
              * @param {number} vies    - nombre de vies restantes      
             */
@@ -98,7 +98,7 @@ $(document).ready(function () {
              * @param {number} avatarX - coordonnée horizontale Grids de l'avatar
              * @param {number} avatarY - coordonnée verticale Grids de l'avatar
              * @param {Array} gpsGridsAvatar - coordonnées Grids de l'avatar
-             * @param {Array<Array<number>>} carte - tableau de la partie en cour
+             * @param {Array<Array<number>>} carte - tableau de la partie en cours
             */
     function deplacerAvatar (avatarY, avatarX) {
         carte[gpsGridsAvatar[0]-1][gpsGridsAvatar[1]-1] = 0;
@@ -110,9 +110,9 @@ $(document).ready(function () {
              * @function checkObstacles
              * @param {number} col - coordonnée horizontale Grids désirée de l'avatar
              * @param {number} lign - coordonnée verticale Grids désirée de l'avatar
-             * @param {Array<Array<number>>} rencontre - cooronnées désirées de l'avatar dans le tableau de la partie
+             * @param {Array<Array<number>>} rencontre - coordonnées désirées de l'avatar dans le tableau de la partie
              * @param {Array} gpsGridsAvatar - coordonnées Grids de l'avatar
-             * @param {Array<Array<number>>} carte - tableau de la partie en cour
+             * @param {Array<Array<number>>} carte - tableau de la partie en cours
             */
     function checkObstacles(col, lign) {
         let rencontre = carte[lign-1][col-1];
@@ -190,7 +190,7 @@ $(document).ready(function () {
      * @param {boolean} droitDeJouer - empêche ou pas le jeu de se poursuivre
      * @param {number} niv - niveau de difficulté du jeu
      * @param {Array} gpsGridsAvatar - coordonnées Grids de l'avatar
-     * @param {Array<Array<number>>} carte - tableau de la partie en cour
+     * @param {Array<Array<number>>} carte - tableau de la partie en cours
      * @param {number} level   - niveau de la partie 
      * */      
     function jouer(niv) {
