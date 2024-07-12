@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./ressources/jquery.js"></script>
+    <title>Jeu CV AL CJ</title>
+</head>
+<body>
+    <!-- Titre et histoire -->
+    <header>
+        <h1>Le Labyrinthe des hamsters volants</h1>
+        <p>Jason a perdu le CV d'une candidate et doit à tout prix le retrouver pour pouvoir lui fixer un entretien.</p>
+        <p>Aide Jason à retrouver les morceaux du CV dans le labyrinthe !</p>
+    </header>
+
+    <!-- partie centrale de la page-->
+    <main>
+        <!-- Intro-->
+        <div id="intro" class="intro">
+            <img id="bureau" src="./images/bureau.jpg" alt="Homme en télétravail" title="Homme en télétravail">
+            <p>Jason Asaneau, responsable du recrutement chez Interdimentional Computing travaillait tranquillement de chez lui, quand tout à coup ... <span title="Cliquer pour continuer">(suite)</span></p>
+        </div>
+        <div id="vortex" class="vortex"></div>
+        <div id="voile" class="voile"></div>
+
+        <!-- section du score-->
+        <section id="resultats" class="resultats">
+            <p id="niveau" title="Niveau du jeu">Niveau : <span></span></p>
+            <p id="score" title="Score">Score : <span></span> / 15</p>
+            <p id="vie" title="Nombre de vies restantes">Vies : <span></span> / 3</p>
+        </section>
+        
+        <!--grille du jeu-->
+        <section id="jeu">          
+            <div id="avatar" class="avatar" title="Jason"></div>
+            <div id="morceauCV" class="morceauCV" title="Morceau de CV à récupérer">CV</div>
+        </section>   
+
+       <!-- Menu-->
+        <nav>
+            <p>Menu</p>
+            <ul>
+                <li title="Cliquer pour jouer">Jouer</li>
+                <li title="Cliquer pour accéder à mon CV"><a href="./ressources/CV anonymisé.pdf" target="_blank">Lire le CV</a></li>
+            </ul>
+        </nav>
+
+        <!--Messages jeu-->
+        <div id="gagne" class="message--cachee" title="Félicitations, cliquer sur Jouer pour une nouvelle partie">! Bravo !</div>
+        <div id="perdu" class="message--cachee" title="Dommage, cliquer sur Jouer pour une nouvelle partie">Perdu ...</div> 
+
+    
+        <!-- Hamsters volants (rebaptisés écureuils)-->
+        <div id="ecureuilEnVol1" class="ecureuilEnVol1"></div>
+        <div id="ecureuilEnVol2" class="ecureuilEnVol2"></div>
+    </main>
+
+    <!-- Consignes -->
+    <aside>
+        <p>Utilise les flèches du clavier pour diriger Jason &larr; &uarr; &darr; &rarr; .</p>
+        <p>Attention aux hamsters volants, ils sont dangereux !</p>
+    </aside>
+
+
+    <!-- Pied-de-page avec les "crédits"-->
+    <footer>
+        <p>Jeu créé par KaraDev92.</p>
+        <p>Police de caractères de Dale Sattler sur GoogleFonts. </p>
+        <p>Sons de Pixabay dont un de floraphonic sur Pixabay.</p>
+        <p>Images :</p>
+        <ul>
+            <li>hamster volant de brgfx sur Freepik</li>
+            <li>avatar de vvstudio sur Freepik</li>
+            <li>Jason à son bureau de Erika R. sur Pixabay</li>
+            <li>vortex de Gordon Johnson sur Pixabay</li>
+            <li>buissons de OpenClipart-Vectors sur Pixabay</li>
+            <li>ville de upklyak sur Freepik</li>
+            <li>arbres de Nina Garman sur Pixabay</li>
+            <li>cadre feuillu de Vicki Hamilton sur Pixabay</li>
+        </ul>
+    </footer>
+    <script src="./config.js" defer></script>
+    <script src="./initialisation.js"></script>
+    <script src="./script.js" defer></script>
+</body>
+</html>

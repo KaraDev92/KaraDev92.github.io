@@ -1,0 +1,340 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+/* variables de style */
+:root {
+    --fond: #7BD3EA;
+    --encadre:#A1EEBD;
+    --txt-voyant: #f584f7;
+    --txt: black;
+    --fond-grille: #F6F7C4;
+}
+
+body {
+    font-family: 'Turret Road', Arial, Helvetica, sans-serif;
+    background-color: var(--fond);
+    color: var(--txt);
+    overflow-x: hidden;
+}
+
+/* titre et texte*/
+h1 {
+    text-align: center;
+    font-weight: 800;
+    color: var(--txt-voyant);
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+header p {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0 1.2rem;
+}
+
+header :last-child {
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+/* partie centrale de la page*/
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+    /* menu */
+nav {
+    text-align: center;
+    margin-top: 1.5rem;
+    background-color: var(--encadre);
+    height: fit-content;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+}
+nav a {
+    text-decoration: none;
+    color: var(--txt);
+}
+nav p {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+nav li {
+    padding: 0.25rem 0;
+    list-style-type: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+nav li:hover {
+    font-weight: 700;
+}
+nav li:first-child:hover {
+    cursor: pointer;
+}
+    /* affichage des résultats */
+#resultats {
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+    background-color: var(--encadre);
+    height: fit-content;
+    width: 9rem;
+}
+#vie,
+#score,
+#niveau {
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+    /* messages jeu */
+#perdu,
+#gagne {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--txt-voyant);
+    position: absolute;
+    top: 20rem;
+    left: calc(50% - 9.5rem);
+    background-color: var(--encadre);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    z-index: 12;
+}
+
+.message--cachee {
+    display: none;
+}
+.message--visible {
+    display: block;
+}
+
+    /* consignes*/
+aside {
+    text-align: center;
+    margin: 1rem 0; 
+}
+
+aside p:first-child {
+    color: var(--txt);
+    font-weight: 700;    
+}
+aside p:last-child {
+    color: var(--txt-voyant);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+    /*grille du jeu*/
+#jeu {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    height: 26.25rem;
+    width: 45rem;
+    border-image: url('./images/frame.png') 30 repeat;
+    border-width: 17px;
+    border-style: solid;
+    background-color: var(--fond-grille);
+    z-index : 8;
+}
+
+    /*avatar*/
+#avatar {
+    background-image: url('./images/avatar.png');
+    background-size: cover;
+    border-style: solid;
+    z-index: 11;
+    background-color: var(--fond);
+}
+.avatar {
+    border-width: 1px;
+    border-color: var(--txt);
+}
+.avatarBoum {
+    border-width: 3px;
+    border-color: red;
+}
+.avatarBingo {
+    border-width: 3px;
+    border-color: green;
+}
+
+        /*morceau de CV à récupérer*/
+#morceauCV {
+    background-color: var(--fond);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.8rem;
+    color: var(--txt-voyant);
+    border: inset 3px rgb(36, 165, 244);
+    /*padding: 10%;*/
+    z-index: 10;
+}
+
+        /*décoration de la grille avec des arbres et buissons*/
+.deco1 {
+    background: url('./images/arbre1.png') no-repeat center;
+    background-size: cover;
+}
+.deco2 {
+    background: url('./images/arbre4.png') no-repeat center;
+    background-size: cover;
+}
+.deco3 {
+    background: url('./images/arbre11.png') no-repeat center;
+    background-size: cover;
+}
+.deco4 {
+    background: url('./images/arbre5.png') no-repeat center;
+    background-size: cover;
+}
+.deco5 {
+    background-image: url('./images/mini_buisson1.png');
+    background-size: contain;
+}
+.deco6 {
+    background: url('./images/arbre7.png') no-repeat center;
+    background-size: cover;
+}
+.deco7 {
+    background: url('./images/arbre10.png') no-repeat center;
+    background-size: cover;
+}
+.deco8 {
+    background: url('./images/arbre3.png') no-repeat center;
+    background-size: cover;
+}
+.deco9 {
+    background: url('./images/arbre2.png') no-repeat center;
+    background-size: cover;
+}
+.deco10 {
+    background-image: url('./images/mini_buisson_fleuri.png');
+    background-size: contain;
+}
+.deco11 {
+    background: url('./images/arbre8.png') no-repeat center;
+    background-size: contain;
+}
+.deco12 {
+    background: url('./images/arbre9.png') no-repeat center;
+    background-size: cover;
+}
+.deco13 {
+    background: url('./images/arbre12.png') no-repeat center;
+    background-size: cover;
+}
+.deco14 {
+    background: url('./images/arbre6.png') no-repeat center;
+    background-size: contain;
+}
+
+/* Animation des hamsters qui volent */
+#ecureuilEnVol1,
+#ecureuilEnVol2 {
+    background-image: url('./images/hamster_volant.png');
+    position: absolute;
+    background-size: contain;
+    z-index: 5;
+    width: 14.5rem;
+    height: 11rem;
+    display: block;
+}
+.ecureuilEnVol1 {
+    transform: scale(-1, 1);
+    animation: ecureuilVole1 40s ease-out infinite 15s;
+}
+.ecureuilEnVol2 {
+    animation: ecureuilVole2 45s ease-out infinite 20s;
+}
+
+@keyframes ecureuilVole1 {
+    0% {top: -11rem; left: -14.5rem;}
+    100% {top: 33rem; left: 100vw;}
+}
+@keyframes ecureuilVole2 {
+    0% {top: -11rem; left: 100vw;}
+    100% {top: 33rem; left: -14.5rem;}
+}
+
+/*Animation introduction */
+.voile {
+    background-image: url('./images/ville.jpg');
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 13;
+    display: block;
+    background-size: cover;
+}
+
+.intro {
+    position: absolute;
+    z-index: 14; 
+    width: 25rem;
+    padding: 0.5rem;
+    border: 0.5rem solid whitesmoke;
+    top: 2rem;
+    background-color: whitesmoke;
+    left: calc(50% - 13.5rem);
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: justify;
+    display: block;
+}
+.intro span {
+    text-decoration: underline;
+}
+.intro span:hover {
+    cursor: pointer;
+}
+
+#bureau {
+    width:25rem;
+}
+
+#vortex {
+    background-image: url('./images/vortex.png');
+    position: absolute;
+    z-index: 15;
+    width: 25rem;
+    height: 25rem;
+    top: 3rem;
+    left : calc(50% - 12.5rem);
+    background-size: cover;
+}
+
+.vortex {
+    transition: transform 5s ease-in-out;
+    transform: rotate(0);
+    opacity: 0;
+}
+
+.vortex--active {
+    opacity: 1;
+    transform: rotate(5turn);
+}
+
+/* Pied-de-page */
+footer {
+    background-color: var(--encadre);
+    font-size: 0.9rem;
+    color: var(--txt);
+    height: 8rem;
+    padding: 1rem;
+}
+footer ul {
+    column-count: 2;
+    column-rule: solid 0.05rem var(--txt);
+    column-gap: 1rem;
+    list-style-position: inside;
+}
